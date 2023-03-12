@@ -1,0 +1,102 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.container label {
+	padding: 5px 20px;
+	position: relative;
+	z-index: 20;
+	display: block;
+	height: 30px;
+	cursor: pointer;
+	color: #777;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+	line-height: 33px;
+	font-size: 19px;
+	border: 1px solid rgba(155,155,155,0.3);
+}
+
+.container label:hover {
+	background: #b0e2f3;
+}
+
+.image-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.image {
+	height: 300px;
+}
+
+.container input:checked + label,
+.container input:checked + label:hover {
+   background: #6acbf1;
+   color: #3d7489;
+   text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
+}
+
+.container label:hover:after,
+.container input:checked + label:hover:after {
+   content: '';
+   position: absolute;
+   width: 24px;
+   height: 24px;
+   right: 13px;
+   top: 7px;
+   background: transparent url(https://e7.pngegg.com/pngimages/795/703/png-clipart-arrow-computer-icons-down-arrow-angle-rectangle.png) no-repeat center center;
+	background-size: 15px;
+}
+
+.container input:checked + label:hover:after {
+   background-image: url(https://w7.pngwing.com/pngs/572/392/png-transparent-up-arrow-computer-icons-up-arrow-angle-rectangle-triangle.png);
+}
+
+.container input {
+	display: none;
+}
+
+.container article {
+	background: rgba(190, 188, 188, 0.5);
+	margin-top: -1px;
+	overflow: hidden;
+	height: 0px;
+	position: relative;
+	z-index: 10;
+  	transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+}
+.container input:checked ~ article {
+  	transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3);
+	height: 400px;
+}
+
+.container article p {
+	font-style: italic;
+	color: #777;
+	line-height: 23px;
+	font-size: 14px;
+	padding-left: 20px;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+}
+
+@media (min-width: 820px) and (max-width: 1180px) { /*создаем медиазапрос для адаптации лендинга под планшеты*/
+	.container {
+		min-width: 800px;
+		max-width: 1100px;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 819px) {
+	.container {
+		min-width: 320px;
+		max-width: 500px;
+	}
+}
