@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-	width: 1000px;
+	width: 1200px;
 	margin: 0 auto;
 }
 
@@ -85,4 +85,18 @@ body {
 	font-size: 14px;
 	padding-left: 20px;
 	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+}
+
+@media (min-width: 820px) and (max-width: 1180px) { /*создаем медиазапрос для адаптации лендинга под планшеты*/
+	.container {
+		min-width: 800px;
+		max-width: 1100px;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 819px) {
+	.container {
+		min-width: 320px;
+		max-width: 500px;
+	}
 }
